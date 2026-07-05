@@ -1,0 +1,5 @@
+/build/
+/bombjack
+*.o
+/bombjack-resources/
+/hiscores.dat
