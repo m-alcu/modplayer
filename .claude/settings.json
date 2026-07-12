@@ -68,7 +68,18 @@
       "Bash(curl -fsSL --max-time 20 \"https://modland.com/pub/modules/Impulsetracker/Skaven/\")",
       "Bash(curl -fsSL --max-time 60 \"https://modland.com/pub/modules/Impulsetracker/Skaven/bookworm.it\" -o bookworm.it)",
       "Bash(file *.s3m *.xm *.it)",
-      "Bash(SDL_VIDEODRIVER=dummy SDL_AUDIO_DRIVER=dummy SDL_RENDER_DRIVER=software timeout 120 ./build/modplayer --skin winamp --shot /tmp/claude-1000/-home-marti-proy-modplayer/9709ed24-f068-4d79-8a1e-fd07d7f3b499/scratchpad/all)"
+      "Bash(SDL_VIDEODRIVER=dummy SDL_AUDIO_DRIVER=dummy SDL_RENDER_DRIVER=software timeout 120 ./build/modplayer --skin winamp --shot /tmp/claude-1000/-home-marti-proy-modplayer/9709ed24-f068-4d79-8a1e-fd07d7f3b499/scratchpad/all)",
+      "Bash(dpkg -l)",
+      "Bash(cmake .. -G Ninja)",
+      "Bash(ninja)",
+      "Bash(time /home/marti/proy/modplayer/build/modplayer --skin tracker --shot shot)",
+      "Bash(/home/marti/proy/modplayer/build/modplayer --skin winamp --shot chk)",
+      "Bash(SDL_RENDER_DRIVER=software /home/marti/proy/modplayer/build/modplayer --skin tracker --shot sw)",
+      "Bash(SDL_RENDER_DRIVER=software /home/marti/proy/modplayer/build/modplayer --skin tracker --shot v2)",
+      "Bash(SDL_RENDER_DRIVER=software /home/marti/proy/modplayer/build/modplayer --skin tracker --shot s3m/v2 s3m)",
+      "Bash(ninja -t clean)",
+      "Bash(/home/marti/proy/modplayer/build/modplayer --selftest)",
+      "Bash(SDL_RENDER_DRIVER=software /home/marti/proy/modplayer/build/modplayer --skin winamp --shot w2)"
     ],
     "additionalDirectories": [
       "/home/marti/proy/mp3player/src",

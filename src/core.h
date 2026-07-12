@@ -85,7 +85,8 @@ struct Skin {
     void (*event)(const SDL_Event& e);
 };
 extern const Skin kSkinNano, kSkinClassic, kSkinWinamp, kSkinFoobar,
-    kSkinZune, kSkinCassette, kSkinVinyl, kSkinCar, kSkinTerm, kSkinMini;
+    kSkinZune, kSkinCassette, kSkinVinyl, kSkinCar, kSkinTerm, kSkinMini,
+    kSkinTracker;
 
 struct App {
     SDL_Window*   win = nullptr;

@@ -4,7 +4,7 @@
 // module rendering, stb_image for folder cover art.
 //
 // Browse the library by Artists / Albums / Songs / Years; the Now Playing
-// screen shows folder cover art when present. Ten skins (cycle with F2 or
+// screen shows folder cover art when present. Eleven skins (cycle with F2 or
 // pick with --skin):
 //   nano     Apple iPod nano look with a working click wheel (default)
 //   classic  Apple iPod Classic: split-screen menu + chrome click wheel
@@ -17,6 +17,8 @@
 //   term     terminal player in the cmus mould, green on black
 //   mini     neutral 320x240 landscape UI for small screens (Raspberry Pi);
 //            add --fullscreen to fill the display
+//   tracker  FastTracker II / Scream Tracker mould: per-channel scopes and
+//            the pattern editor scrolling with the music (needs libopenmpt)
 // ---------------------------------------------------------------------------
 
 #include <SDL3/SDL.h>
@@ -35,7 +37,7 @@ namespace {
 const Skin* kSkins[] = {&kSkinNano,     &kSkinClassic, &kSkinWinamp,
                         &kSkinFoobar,   &kSkinZune,    &kSkinCassette,
                         &kSkinVinyl,    &kSkinCar,     &kSkinTerm,
-                        &kSkinMini};
+                        &kSkinMini,     &kSkinTracker};
 constexpr int kNumSkins = (int)(sizeof kSkins / sizeof kSkins[0]);
 
 const Skin* skinByName(const std::string& name) {
@@ -133,6 +135,8 @@ int shotMode(const std::string& prefix) {
         render(); saveShot(base + "-songs.bmp");
         activateRow(g.nav.back(), g.nav.back().cursor);
         playback::setPaused(true);
+        // mid-song, so position-dependent visuals show something typical
+        playback::seekTo(playback::duration() * 0.4);
         render(); saveShot(base + "-now.bmp");
     } else {
         render(); saveShot(base + "-songs.bmp");

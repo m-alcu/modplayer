@@ -2,7 +2,7 @@
 
 `build/modplayer` is a small music player for tracker modules — Amiga
 ProTracker **MOD**, FastTracker II **XM**, Scream Tracker 3 **S3M** and
-Impulse Tracker **IT** — with ten switchable skins. It scans a folder of
+Impulse Tracker **IT** — with eleven switchable skins. It scans a folder of
 module files, reads the song name from each header and lets you browse by
 **Artists / Albums / Songs / Years** (modules group under their format and
 channel count in Albums); the Now Playing screen shows **folder cover art**
@@ -32,7 +32,7 @@ builds via CMake:
 
 ## Skins
 
-Ten skins, all cycled live with **F2** or picked with `--skin <name>`:
+Eleven skins, all cycled live with **F2** or picked with `--skin <name>`:
 
 - **`nano`** (default) — classic Apple iPod nano: portrait body with a
   **working click wheel** (drag the ring to scroll, click MENU / |<< / >>| /
@@ -78,6 +78,15 @@ Ten skins, all cycled live with **F2** or picked with `--skin <name>`:
 
   (Under X11/Wayland it opens a 640x480 window; on the bare console SDL3
   uses KMSDRM and the 320x240 canvas letterboxes to the display.)
+- **`tracker`** — the FastTracker II / Scream Tracker 3 mould: gray-blue
+  beveled panels, sunken order/pattern/row/speed/BPM readouts, **one
+  oscilloscope per module channel** and the **pattern editor** with the
+  note rows scrolling under a fixed center bar as the song plays
+  (note / instrument / volume / effect columns colored FT2-style). While a
+  module plays the right panel lists its instrument or sample names —
+  where demoscene greetings traditionally live. Pattern data and
+  per-channel signals need **libopenmpt**; on the pocketmod fallback the
+  scopes collapse to one mixed-signal scope.
 
 ## Modules, tags & art
 

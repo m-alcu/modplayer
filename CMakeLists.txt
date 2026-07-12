@@ -19,6 +19,7 @@ add_executable(modplayer
     src/skin_car.cpp
     src/skin_term.cpp
     src/skin_mini.cpp
+    src/skin_tracker.cpp
     src/library.cpp
     src/tags.cpp
     src/playback.cpp
